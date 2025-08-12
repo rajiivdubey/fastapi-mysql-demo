@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 async def read_root():
-    return {"message": "Hello, World!"}
+    return {"message": "Learning FastAPI"}
 
 @app.get("/data")
 def get_data(db: Session = Depends(get_db)):
@@ -19,4 +19,5 @@ def get_data(db: Session = Depends(get_db)):
         {"id": user.id, "name": user.name, "email": user.salary}
         for user in employees
     ]
+
     return result
