@@ -16,8 +16,9 @@ def get_data(db: Session = Depends(get_db)):
 
     # Convert ORM objects to dictionaries
     result = [
-        {"id": user.id, "name": user.name, "email": user.salary}
+        {"id": user.id, "name": user.name, "salary": user.salary}
         for user in employees
     ]
 
     return result
+
